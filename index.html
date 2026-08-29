@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>keypress — typing speed test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">key<span>press</span></div>
+  <div class="tagline">// a typing speed test</div>
+</header>
+
+<div class="config" id="config">
+  <button data-time="15">15s</button>
+  <button data-time="30" class="active">30s</button>
+  <button data-time="60">60s</button>
+  <button data-time="120">120s</button>
+</div>
+
+<div class="config" id="difficulty">
+  <button data-level="beginner">beginner</button>
+  <button data-level="medium" class="active">medium</button>
+  <button data-level="advanced">advanced</button>
+</div>
+
+<div class="stats" id="liveStats">
+  <div class="stat"><div class="val" id="statTime">30</div><div class="lbl">seconds</div></div>
+  <div class="stat"><div class="val" id="statWpm">0</div><div class="lbl">wpm</div></div>
+  <div class="stat"><div class="val" id="statAcc">100%</div><div class="lbl">accuracy</div></div>
+</div>
+
+<div class="card" id="card">
+  <div class="text-display" id="textDisplay"></div>
+  <div class="caret" id="caret"></div>
+  <input type="text" class="hidden-input" id="hiddenInput" autocomplete="off" autocapitalize="off" spellcheck="false">
+  <div class="focus-hint" id="focusHint">click here, or press any key to start typing</div>
+</div>
+
+<div class="results" id="results">
+  <div class="headline"><span id="resWpm">0</span><small>wpm</small></div>
+  <div class="results-grid">
+    <div class="item"><div class="n" id="resAcc">0%</div><div class="l">accuracy</div></div>
+    <div class="item"><div class="n" id="resRaw">0</div><div class="l">raw wpm</div></div>
+    <div class="item"><div class="n" id="resChars">0/0</div><div class="l">correct / total</div></div>
+    <div class="item"><div class="n" id="resTime">0s</div><div class="l">duration</div></div>
+  </div>
+  <button class="keycap" id="restartFromResults">try again — tab</button>
+</div>
+
+<div class="below">
+  <button class="keycap" id="restartBtn">restart</button>
+  <span>press <kbd style="font-family:inherit;background:#2a2d37;padding:2px 6px;border-radius:4px;color:#e8e6e1;">tab</kbd> to restart anytime</span>
+</div>
+
+<script src="./js/script.js"></script>
+
+</body>
+</html>
